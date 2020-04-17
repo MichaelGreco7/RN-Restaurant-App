@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import yelp from '../api/yelp';
@@ -26,6 +26,9 @@ const SearchScreen = () => {
   //  Call searchApi when component
   //  Is first rendered. BAD CODE!!
   //   searchApi('pasta');
+  useEffect(() => {
+    searchApi('pasta');
+  }, []);
 
   return (
     <View>
